@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user-authentication</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1{
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <% if (user) { %>
+        <h1>Welcome <%= user %>!</h1>
+        <a href="/logout">Logout</a>
+    <% } else { %>
+        <h1>Welcome to home page</h1>
+        <a href="/signup">signup</a>
+        <a href="/login">login</a>
+    <% } %>
+</body>
+</html>
