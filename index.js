@@ -10,6 +10,7 @@ app.use(express.urlencoded( {extended: false }));
 app.set('view engine', 'ejs');
 app.use(cookieParser());
 app.use(express.json());
+app.set('views', './views');
 
 // connetion 
 mongoose.connect('mongodb://127.0.0.1:27017/Authentication_System')
