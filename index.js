@@ -11,7 +11,10 @@ app.set('view engine', 'ejs');
 app.use(cookieParser());
 app.use(express.json());
 app.set('views', './views');
-
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+  });
 // connetion 
 mongoose.connect('mongodb://127.0.0.1:27017/Authentication_System')
 .then(() => console.log('mongodb connected successfulyy'))
